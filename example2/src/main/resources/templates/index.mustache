@@ -1,0 +1,16 @@
+<h1>Hello World!</h1>
+
+<p>
+    This is an example web app made with the help of Spring Boot.
+</p>
+
+<ul>
+    {{#videos}}
+        <li>{{name}}</li>
+    {{/videos}}
+</ul>
+
+<form action="/new-video" method="post">
+    <input type="text" name="name">
+    <button type="submit">Submit</button>
+</form>
