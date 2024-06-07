@@ -40,6 +40,41 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+			<plugin>
+				<groupId>com.github.eirslett</groupId>
+				<artifactId>frontend-maven-plugin</artifactId>
+				<version>1.12.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>install-node-and-npm</goal>
+						</goals>
+					</execution>
+
+					<execution>
+						<id>npm install</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+					</execution>
+
+					<execution>
+						<id>npx run</id>
+						<goals>
+							<goal>npx</goal>
+						</goals>
+						<phase>generate-resources</phase>
+						<configuration>
+							<arguments>parcel build</arguments>
+						</configuration>
+					</execution>
+
+				</executions>
+				<configuration>
+					<nodeVersion>v16.14.2</nodeVersion>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
